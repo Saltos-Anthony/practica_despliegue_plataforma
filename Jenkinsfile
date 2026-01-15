@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        nodejs "Node25" 
+        nodejs "Node 25"
         dockerTool "Dockertool" 
     }
 
@@ -15,7 +15,10 @@ pipeline {
 
         stage('Ejecutar tests') {
             steps {
-                sh 'npm test'
+                sh '''
+                    chmod +x node_modules/.bin/jest
+                    npx jest
+                '''
             }
         }
 
