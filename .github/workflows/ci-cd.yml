@@ -25,7 +25,7 @@ jobs:
         run: npm test
 
       - name: Build del proyecto
-        run: echo "Build completado correctamente"
+        run: node index.js
 
       - name: Deploy
         run: echo "Despliegue automático exitoso"
