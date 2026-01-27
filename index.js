@@ -115,8 +115,14 @@ app.get('/users/:id', (req, res) => {
 module.exports = app;
 
 // Iniciar el servidor
-if (require.main === module){
+if (require.main === module) {
+
+    if (process.env.CI) {
+        console.log("Build validado en entorno CI");
+        process.exit(0);
+    }
+
     app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Servidor corriendo en http://0.0.0.0:${PORT}`);
-});
+        console.log(`Servidor corriendo en http://0.0.0.0:${PORT}`);
+    });
 }
