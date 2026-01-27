@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Ejecutar pruebas
-        run: npm test || echo "No hay pruebas definidas"
+        run: npm test
 
       - name: Build del proyecto
         run: echo "Build completado correctamente"
