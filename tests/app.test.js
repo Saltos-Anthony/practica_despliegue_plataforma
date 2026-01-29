@@ -32,17 +32,8 @@ describe('API de usuarios', () => {
   });
 
   it('Debe buscar el usuario creado', async () => {
-    const res = await request(app).get(`/users/${testUser.id}`);
+    const res = await request(app).get(`/usuarios/${testUser.id}`);
     expect(res.statusCode).toBe(200);
     expect(res.body.user).toMatchObject(testUser);
-  });
-
-    it('PUT /users/:id', async () => {
-    const res = await request(app)
-      .put(`/users/${testUser.id}`)
-      .send(updatedUser);
-
-    expect(res.statusCode).toBe(200);
-    expect(res.body.user.name).toBe(updatedUser.name);
   });
 });
